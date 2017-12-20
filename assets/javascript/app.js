@@ -66,9 +66,11 @@ $('#submitButton').on('click', function() {
             var latLong = results[index].latLong
             //Get the location name
             locationName = results[index].fullName;
+
             // Slice the string to break out latLong into two values.
             latitude = parseFloat(latLong.slice(latLong.indexOf(':') + 1, latLong.indexOf(',')));
             longitude = parseFloat(latLong.slice(latLong.lastIndexOf(':') + 1));
+
             //  add markers/ from results
             var currentMarker = {
                     coords: { lat: latitude, lng: longitude},
@@ -91,9 +93,3 @@ $('#submitButton').on('click', function() {
         addMarker(markers);
     });
 });
-    
-
-
-
-
-
